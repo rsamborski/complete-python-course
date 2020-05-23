@@ -1,5 +1,6 @@
 # Super TURBO Indestructible App !!!
 
+MENU_PROMPT = "\nEnter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie by title, or 'q' to quit: "
 movies = []
 
 
@@ -35,20 +36,19 @@ def find_movie():
         if movie[attribute].lower() == search_string.lower():
             print_movie(movie)
 
+
 # Display user menu and handle input
 def display_menu():
-    MENU_PROMPT = "\nEnter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie by title, or 'q' to quit: "
+    functions_dict = {
+        "a": add_movie,
+        "l": print_movies,
+        "f": find_movie
+    }
+
     selection = input(MENU_PROMPT)
     while selection != 'q':
-        if selection == "a":
-            add_movie()
-            pass
-        elif selection == "l":
-            print_movies()
-            pass
-        elif selection == "f":
-            find_movie()
-            pass
+        if selection in functions_dict:
+            functions_dict[selection]()
         else:
             print('Unknown command. Please try again.')
 
