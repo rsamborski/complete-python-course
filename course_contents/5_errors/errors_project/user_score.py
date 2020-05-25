@@ -5,7 +5,7 @@ class User:
         self.score = 0
 
     def __repr__(self):
-        return f'<User {self.name}>'
+        return f'<User {self.name}, {self.engagement_metrics}, {self.score}>'
 
 
 def email_engaged_user(user):
@@ -14,6 +14,7 @@ def email_engaged_user(user):
     except KeyError:
         print('Incorrect values provided to our calculation function.')
     else:
+        print(f"{user.name} scored {user.score} in the best clicker award!")
         if user.score > 500:
             send_engagement_notification(user)
 
@@ -26,5 +27,5 @@ def send_engagement_notification(user):
     print(f'Notification sent to {user}.')
 
 
-my_user = User('Rolf', {'clicks': 61, 'hits': 100})
+my_user = User('Abdul', {'clicks': 115, 'hits': 100})
 email_engaged_user(my_user)
