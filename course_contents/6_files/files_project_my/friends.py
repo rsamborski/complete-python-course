@@ -4,7 +4,6 @@ friends_list = input("Please give the name of your 3 friends: ").split(',')
 
 with open("people.txt") as people_file:
     people_list = [l.strip() for l in people_file.readlines()]
-    people_file.close()
 
 friends_set = set(friends_list)
 people_set = set(people_list)

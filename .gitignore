@@ -25,3 +25,4 @@ videos/
 *.numbers
 *.sketch
 /venv/
+/course_contents/6_files/files_project_my/results.txt
