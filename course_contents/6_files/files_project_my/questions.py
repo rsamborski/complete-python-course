@@ -23,5 +23,5 @@ with open("questions.txt", "r") as f:
             n = n+1
         # print(f"{question} -> {answer}")
 
-with open("results.txt", "w") as f:
+with open("result.txt", "w") as f:
     f.write("Your final score is {}/{}".format(n, len(lines)))
