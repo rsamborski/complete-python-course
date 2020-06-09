@@ -26,3 +26,4 @@ videos/
 *.sketch
 /venv/
 /course_contents/6_files/files_project_my/result.txt
+/course_contents/6_files/files_project_my/json_file.txt

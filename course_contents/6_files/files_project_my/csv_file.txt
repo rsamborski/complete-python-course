@@ -1,0 +1,3 @@
+Manchester United,Manchester,UK
+Pogon Szczecin,Szczecin,Poland
+Real Madrit,Madrit,Spain
