@@ -11,7 +11,7 @@ json_data = []
 
 with open("csv_file.txt", "r") as csv_file:
     for line in csv_file:
-        (club, city, country) = line.strip().split(",")
+        club, city, country = line.strip().split(",")
         json_data.append({"club": club, "country": country, "city": city})
 
 with open("json_file.txt", "w") as json_file:
