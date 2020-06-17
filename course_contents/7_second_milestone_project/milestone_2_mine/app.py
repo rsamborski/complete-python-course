@@ -1,5 +1,4 @@
 from utils import database
-from utils.database import add_book, get_all_books, get_book, mark_book_as_read, delete_book
 
 USER_CHOICE = """
 Enter:
@@ -16,11 +15,11 @@ def prompt_add_book():
     name = input("Name of the book:")
     author = input("Author of the book:")
 
-    add_book(name, author)
+    database.add_book(name, author)
 
 
 def list_books():
-    books = get_all_books()
+    books = database.get_all_books()
 
     if len(books) == 0:
         print("No books, feel free to add some :-)")
@@ -37,12 +36,13 @@ def print_book(book_id, book):
     # print(f"Author: {book['author']}")
     # print(f"Book was read: {book['read']}")
     # print(f"-----------------------------")
-    print(f"[{book_id}] {book['name']}, {book['author']}, read: {book['read']}")
+    read = 'YES' if book['read'] else 'NO'
+    print(f"[{book_id}] {book['name']}, {book['author']}, read: {read}")
 
 
 def prompt_read_book():
     book_id = int(input("Book ID:").strip())
-    book = mark_book_as_read(book_id)
+    book = database.mark_book_as_read(book_id)
     if book['read']:
         print("Book marked as read")
     else:
@@ -53,7 +53,7 @@ def prompt_read_book():
 
 def prompt_delete_book():
     book_id = int(input("Book ID:").strip())
-    book = delete_book(book_id)
+    book = database.delete_book(book_id)
 
     print_book(book_id, book)
 
